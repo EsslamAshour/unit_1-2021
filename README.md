@@ -15,11 +15,12 @@ Apart for this requirements, the owner is open to any type of game, topic or gen
 
 ## Proposed Solution
 
-Design statement:
+### Design statement:
 I will design and develop a text-based game for a client who is a game shop owner. The game will be a post-apocalyptic adventure game with turn-based fights and will be developed using Python. It will take around 3 weeks to develop and will be evaluated according to the success criteria below.
 
 
-I chose Python because:
+### Justification of proposed solution:
+I chose python because:
     1. It has a simple and concise syntax and is a dynamic language which is the best option for a program like this. 
     
     2. It is easy to get input from the user using the ``input()`` function compared to languages like C, C#, Golang, Rust, etc.
