@@ -21,12 +21,18 @@ I will design and develop a text-based game for a client who is a game shop owne
 
 ### Justification of proposed solution:
 I chose python because:
-    - It has a simple and concise syntax and is a dynamic language which is the best option for a program like this. 
-    - It is easy to get input from the user using the ``input()`` function compared to languages like C, C#, Golang, Rust, etc.
-    - It is a productive language, which means we get to focus more on solving the actual problem and not understanding the syntax for example. And this is needed for a program with a short development time.
+   
+   - It has a simple and concise syntax and is a dynamic language which is the best option for a program like this. 
+   
+   - It is easy to get input from the user using the ``input()`` function compared to languages like C, C#, Golang, Rust, etc.
+   
+   - It is a productive language, which means we get to focus more on solving the actual problem and not understanding the syntax for example. And this is needed for a program with a short development time.
+   
    - It is portable, if we develop the program on one OS it will run on others without having to change the code.
-    - Vast support. Python is one of the most popular programming languages in the world right now, so it has ton of support like specific bug solutions (on Stack Overflow for example)
-    - It has a huge standard library, so we won't have to depend on many external libraries.
+   
+   - Vast support. Python is one of the most popular programming languages in the world right now, so it has ton of support like specific bug solutions (on Stack Overflow for example)
+   
+   - It has a huge standard library, so we won't have to depend on many external libraries.
  
 ## Success Criteria
 1. The game has to be entirely text-based.
