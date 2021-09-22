@@ -20,6 +20,7 @@ I will design and develop a text-based game for a client who is a game shop owne
 
 
 I chose Python because:
+
     1. It has a simple and concise syntax and is a dynamic language which is the best option for a program like this. 
     2. It is easy to get input from the user using the ``input()`` function compared to languages like C, C#, Golang, Rust, etc.
     3. It is a productive language, which means we get to focus more on solving the actual problem and not understanding the syntax for example. And this is needed for a program with a short development time.
