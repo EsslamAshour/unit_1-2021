@@ -7,9 +7,9 @@ def start():
     answer = input("Start game? (y/n) ").lower()
     validate(answer, ["y", "n"])
     if answer == "y":
-        print("                                >> GAME STARTED <<                                ")
+        print(">> GAME STARTED <<")
         time.sleep(1.3)
-        print(">> welcome to <<SHOURI NO TSURUGI>>, a turn-based gladiator game where you climb your ways up in the tournament, can you win and be crowned champion of the collosseum?")
+        print(">> welcome to <<YUUSHA NO TSURUGI>>, a turn-based gladiator game where you climb your ways up in the tournament, can you win and be crowned champion of the collosseum?")
         print(">> in this game, there are 20 levels, each level there is a gladiator you have to fight. If you win - by reducing your opponent's HP to 0 - you advance to the next level. Each level your sword's strength and your HP increase and the same for your opponents.")
         start = True
     else:
