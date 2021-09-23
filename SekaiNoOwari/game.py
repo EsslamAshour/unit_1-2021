@@ -1,60 +1,106 @@
-inv = []
+'''
+    File name: test.py
+    Author: Peter Test
+    Date created: 4/20/2013
+    Date last modified: 4/25/2013
+    Python Version: 2.7
+'''
+
+import random
+import time
+import os
+import sys
 
 def start():
-    print("""
-    It's the year 2329. 200 years ago, a great plague turned more than 90% of the earth's population into undead beasts known as the Fujimi. You're one of the very few survivors who are struggling to find shelter, food and water while protecting themselves from Fujimi. But they are not the only enemy, as most humans have abandoned their morals and beliefs and would do anything to survive, and that includes killing other humans. Wild animals - known as the Yajuu - were not affected by this plague.
-    """)
-    
-    tutorial_q = input("Would you like to view the tutorial before starting? (y/n)")
-    validate(tutorial_q, ["y", "n"])
-    if tutorial_q == "y":
-        tutorial()
-    
-    # Getting name from user
-    name = input("What's your name? ")
-    confirm = input(f"Is your name {name}? (y/n) ")
-    validate(confirm, ["y", "n"])
-    while confirm == "n":
-        name = input(f"What's your name? ")
-        confirm = input(f"Is your name {name}? (y/n) ")
-        validate(confirm, ["y", "n"])
-    
-
-# TODO
-# Let the user try a fight before starting the game
-def tutorial():
-    print(""""
-    Welcome to Sekai no Owari, a turn-based post-apocalyptic game. In this game, you're a human trying to survive as long as possible, avoiding getting eaten by the undead, killed by humans or wild animals.
-    This game uses a choice system where, for example, you choose which place to go to, or how to deal with an enemy. There are different places like abandoned houses, shops, etc. When entering a place you risk the chance of encountering an enemy in exchange of possibly finding useful items like weapons, food or water. When you encounter an enemy you can choose to run or fight, running will not always result in you safely escaping away. Fights are turn-based, you use your weapons - or your body if you have none - to fight the enemy until their HP (Health Points) becomes 0, if your HP becomes 0 you die. You can consume food after fights to recover your HP.
-    """)
-
-# For testing purposes
-def test_room():
-    print("You wake up in the abandonded house you decided to stay at last night, the sun is just starting to rise.")
-    choose_action()
-
-def choose_action(next_place=None):
-    print("What will you do?")
-    action = input((""""
-    - Move (m)
-    - Open inventory (i)
-    """)).lower()
-    validate(action, ["m", "i"])
-    if action == "m":
-        next_place()
+    answer = input("Start game? (y/n) ").lower()
+    validate(answer, ["y", "n"])
+    if answer == "y":
+        print("                                >> GAME STARTED <<                                ")
+        time.sleep(1.3)
+        print(">> welcome to <<SHOURI NO TSURUGI>>, a turn-based gladiator game where you climb your ways up in the tournament, can you win and be crowned champion of the collosseum?")
+        print(">> in this game, there are 20 levels, each level there is a gladiator you have to fight. If you win - by reducing your opponent's HP to 0 - you advance to the next level. Each level your sword's strength and your HP increase and the same for your opponents.")
+        start = True
     else:
-        inventory()
+        print(">> game closed")
+        sys.exit()
 
-# TODO
-# Using items, dropping items, checking info about items
-def inventory():
-    print("------------------INVENTORY------------------")
-    for item in inv:
-        print(f"- {item} ")
+    if start == True:    
+        # Get name
+        name = input(">> What's your name, gladiator? ")
+        confirm = input(f">> Is your name {name}? (y/n) ").lower()
+        validate(confirm, ["y", "n"])
+        while confirm == "n":
+            name = input(f">> What's your name? ")
+            confirm = input(f">> Is your name {name}? (y/n) ").lower()
+            validate(confirm, ["y", "n"])
+        answer = input(f">> Gladiator {name}, are you ready? (y/n) ").lower()
+        validate(answer, ["y", "n"])
+        if answer == "y":
+            clear()
+            lvl_one()
+        else:
+            print("Coward.")
+
+# This function will later be generalized for all levels. For now this is a test version.
+# TODO: Add block for enemy, organize code, more fighting options, make it so the program doesn't print the attack log when one hp reaches 0.
+def lvl_one():
+    player_hp = 15
+    flamma_hp = 15
+    blocked = False
+    print(">> FIGHT START <<")
+    time.sleep(1)
+    print(f">> LEVEL ONE - YOUR HP: {player_hp} - STRENGTH 5 <<")
+    print(f">> GLADIATOR FLAMMA - {flamma_hp} HP - STRENGTH 5 <<")
+   
+    while player_hp > 0 and flamma_hp > 0:
+        # Player's turn
+        atk_block = input("""
+        >> What will you do?
+            > Attack (a)
+            > Block (b) 
+        """).lower()
+        validate(atk_block, ["a", "b"])  
+        if atk_block == "a":
+            player_atk = random.randint(1, 5)
+            print("YOU ATTACKED FLAMMA")
+            time.sleep(1)
+            print(f"YOUR ATTACK DEALT {player_atk} DAMAGE. FLAMMA'S HP WAS REDUCED FROM {flamma_hp} TO {flamma_hp-player_atk}")
+            print("======================================================")
+            flamma_hp -= player_atk
+            time.sleep(1)
+        else:
+            block_chance = random.randint(0, 10)
+            if block_chance <= 3:
+                blocked = True            
         
+        if blocked:
+            print("FLAMMA TRIED TO ATTACK, BUT YOU BLOCK THE ATTACK!")
+            blocked = False
+            print("======================================================")
+        
+        # Enemy's turn
+        else:
+            flamma_atk = random.randint(1, 5)
+            print("FLAMMA ATTACKED YOU")
+            time.sleep(1)
+            print(f"FLAMMA'S ATTACK DEALT {flamma_atk} DAMAGE. YOUR HP WAS REDUCED FROM {player_hp} to {player_hp-flamma_atk}")
+            print("======================================================")
+            player_hp -= flamma_atk
+    
+    if player_hp <= 0:
+        print("YOU DIED.")
+    else:
+        print("YOU WON!")
+            
+    
 def validate(usr_input, choices):
     while usr_input not in choices:
         usr_input = input(f"Please input a valid option. ({[choice for choice in choices]}) ").lower()
 
+def clear():
+    if os.name == 'nt':
+        _ = os.system('cls')
+    else:
+        _ = system('clear')
 
 start()
