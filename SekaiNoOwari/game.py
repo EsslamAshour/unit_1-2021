@@ -1,11 +1,3 @@
-'''
-    File name: test.py
-    Author: Peter Test
-    Date created: 4/20/2013
-    Date last modified: 4/25/2013
-    Python Version: 2.7
-'''
-
 import random
 import time
 import os
