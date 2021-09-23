@@ -16,7 +16,7 @@ Apart for this requirements, the owner is open to any type of game, topic or gen
 ## Proposed Solution
 
 ### Design statement:
-I will design and develop a text-based game for a client who is a game shop owner. The game will be a post-apocalyptic adventure game with turn-based fights and will be developed using Python. It will take around 3 weeks to develop and will be evaluated according to the success criteria below.
+I will design and develop a text-based game for a client who is a game shop owner. The game will be a turn-based colosseum fighting game and will be developed using Python. It will take around 3 weeks to develop and will be evaluated according to the success criteria below.
 
 
 ### Justification of proposed solution:
