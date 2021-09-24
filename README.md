@@ -45,7 +45,7 @@ I chose python because:
 # Criteria B: Design
 
 ## System Diagram
-
+![](system_diagram.jpg)
 ## Flow Diagrams
 
 ## Record of Tasks
