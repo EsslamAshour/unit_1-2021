@@ -8,12 +8,18 @@ Yes. For my game an MVP would be a primitive version of the game with basic func
 
 # Question 3
 
-- **Discoverability**: discovering what operations you can do on something by just looking at it, without needing manual instructions.
-- **Feedback**: informing the human of what operation they did and what that operation did.
+- In both you observe your audience in order to know what is needed.
+- *Idea generation* and *planning* in are similar, as both include coming up with a solution.
+- *Prototyping* and *design* are similar, as in both stages we create a model for the product.
+- In both cycles there's a testing stage.
+
 
 # Question 4
+
+- **Discoverability**: discovering what operations you can do on something by just looking at it, without needing manual instructions.
+- **Feedback**: informing the human of what operation they did and what that operation did.
 
 
 # Question 5
 
-- When the user does a certain action - like attacking/blocking the enemy in my game - the program will print what the user did and what the action did - how much damage the attack dealt/if the block succeeded the enemy's HP -
+- When the user does a certain action (like attacking/blocking the enemy in my game) the program will print what the user did and what the action did (how much damage the attack dealt/ whether the block succeeded or not / the enemy's HP)
