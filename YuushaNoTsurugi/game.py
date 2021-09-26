@@ -93,7 +93,7 @@ def get_name():
         name = input(">> Name already exists, please try another name: ")
     while len(name) < 3 or len(name) > 12:
         long_or_short = "short" if len(name) < 3 else "long"
-        name = input(f">> Name too {long_or_short}. Please try a longer name. (3-12 characters)")
+        name = input(f">> Name too {long_or_short}. Please try another name. (3-12 characters)")
     confirm = input(f">> Is your name {name}? (y/n) ").lower()
     confirm = validate(confirm, ["y", "n"])
     while confirm == "n":
