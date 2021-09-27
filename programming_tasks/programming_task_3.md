@@ -17,6 +17,5 @@ steps = func(N)
 while steps < 10:
     N += 1
     steps = func(N)
-    print(steps)
-    print(N)
+print(N)
 ```
