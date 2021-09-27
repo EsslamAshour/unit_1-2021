@@ -13,9 +13,9 @@ def steps(N):
     return step_count
 
 N = 0
-steps = func(N)
-while steps < 10:
+step_count = steps(N)
+while step_count < 10:
     N += 1
-    steps = func(N)
+    step_count = steps(N)
 print(N)
 ```
