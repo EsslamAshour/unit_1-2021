@@ -49,8 +49,8 @@ I chose python because:
 ## Flow Diagrams
 
 ## Record of Tasks
-| Task No | Planned Action                  | Planned Outcome                                                         | Time estimate | Target completion date | Criterion |
-|---------|---------------------------------|-------------------------------------------------------------------------|---------------|------------------------|-----------|
-| 1       | Create system diagram           |                                                                         | 10 Minutes    |                        |           |
-| 2       | Create database logic (sqlite3) | Have a functioning sqlite3 databse to insert, get and modify user data. | 30 Minutes    |                        |           |
-|         |                                 |                                                                         |               |                        |           |
+| Task No | Planned Action                    | Planned Outcome                                                         | Time estimate | Target completion date | Criterion |
+|---------|-----------------------------------|-------------------------------------------------------------------------|---------------|------------------------|-----------|
+| 1       | Create system diagram             |                                                                         | 10 Minutes    | 24/9/2021              |           |
+| 2       | Code the database logic (sqlite3) | Have a functioning sqlite3 databse to insert, get and modify user data. | 30 Minutes    | 27/9/2021              |           |
+|         |                                   |                                                                         |               |                        |           |
