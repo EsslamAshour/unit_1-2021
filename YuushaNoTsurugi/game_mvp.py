@@ -3,8 +3,6 @@ import time
 import os
 import sys
 
-global current_score
-
 level_data = {
     1: {
         "enemy_name": "FLAMMA",
