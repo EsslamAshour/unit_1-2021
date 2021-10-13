@@ -3,11 +3,80 @@ import time
 import os
 import sys
 
-import db
+global current_score
 
-
-level_data = db.level_data
-current_lvl = 0
+level_data = {
+    1: {
+        "enemy_name": "FLAMMA",
+        "enemy_hp": 15,
+        "player_hp": 15,
+        "enemy_strength": 5,
+        "player_strength": 5
+    },
+    2: {
+        "enemy_name": "SPICULUS",
+        "enemy_hp": 20,
+        "player_hp": 20,
+        "enemy_strength": 8,
+        "player_strength": 9
+    },
+    3: {
+        "enemy_name": "TETRAITES",
+        "enemy_hp": 25,
+        "player_hp": 23,
+        "enemy_strength": 10,
+        "player_strength": 11
+    },
+    4: {
+        "enemy_name": "CARPOPHORUS",
+        "enemy_hp": 30,
+        "player_hp": 25,
+        "enemy_strength": 11,
+        "player_strength": 13
+    },
+    5: {
+        "enemy_name": "PRISCUS",
+        "enemy_hp": 35,
+        "player_hp": 32,
+        "enemy_strength": 14,
+        "player_strength": 15
+    },
+    6: {
+        "enemy_name": "VERUS",
+        "enemy_hp": 40,
+        "player_hp": 40,
+        "enemy_strength": 19,
+        "player_strength": 16
+    },
+    7: {
+        "enemy_name": "ATTILIUS",
+        "enemy_hp": 45,
+        "player_hp": 42,
+        "enemy_strength": 20,
+        "player_strength": 18
+    },
+    8: {
+        "enemy_name": "THRAEX",
+        "enemy_hp": 50,
+        "player_hp": 45,
+        "enemy_strength": 23,
+        "player_strength": 20
+    },
+    9: {
+        "enemy_name": "MYRMILLO",
+        "enemy_hp": 60,
+        "player_hp": 48,
+        "enemy_strength": 25,
+        "player_strength": 23
+    },
+    10: {
+        "enemy_name": "SPARTACUS",
+        "enemy_hp": 80,
+        "player_hp": 55,
+        "enemy_strength": 30,
+        "player_strength": 25
+    }
+}
 
 def start():
     print(">> GAME STARTED <<\n")
@@ -21,7 +90,6 @@ def start():
     answer = input(f">> Gladiator {name}, are you ready? (y/n) ").lower()
     answer = validate(answer, ["y", "n"])
     if answer == "y":
-        db.insert_player(name)
         clear()
         lvl_start(1)
     else:
@@ -69,32 +137,25 @@ def lvl_start(lvl):
             break
                 
     if winner == "player":
-        end_time = time.time()
-        play_time = start_time - end_time
+        lvl += 1
         print(">> YOU WON! <<")
-        if lvl == 10:
-            print(">> CONGRATULATIONS. YOU ARE THE CHAMPION OF THE COLLOSSEUM! - TIME PLAYED: {play_time} <<")
-            db.update_score(current_player_name)
+        if lvl == 11:
+            print(f">> CONGRATULATIONS. YOU ARE THE CHAMPION OF THE COLLOSSEUM! <<")
             sys.exit()
-        db.update_score(current_player_name)
-        print(f"Score: {db.get_score(current_player_name)}")
-        print(f"NEXT LEVEL: {lvl+1} - STARTING IN 3 SECONDS")
+        print(f"Score: {lvl-1}")
+        print(f"NEXT LEVEL: {lvl} - STARTING IN 3 SECONDS")
         time.sleep(3)
         clear()
-        lvl_start(lvl+1)
+        lvl_start(lvl)
     else:
         end_time = time.time()
-        play_time = end_time - start_time
         print("YOU DIED.")
-        print(f">> GAME OVER - SCORE {db.get_score(current_player_name) - 1} - TIME PLAYED: {play_time}<<")
+        print(f">> GAME OVER - SCORE {lvl}<<")
 
 def get_name():
     uname = input(">> What's your name, gladiator? (3-12 characters, only letters or numbers): ")
-    existing_names = db.get_existing_names()
     while not uname.isalnum():
         uname = input(">> Please only use letters or numbers in your name: ")
-    while uname in existing_names:
-        uname = input(">> Name already exists, please try another name: ")
     while len(uname) < 3 or len(uname) > 12:
         long_or_short = "short" if len(uname) < 3 else "long"
         uname = input(f">> Name too {long_or_short}. Please try another name. (3-12 characters): ")   

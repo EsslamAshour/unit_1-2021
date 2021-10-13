@@ -2,17 +2,27 @@ import sqlite3
 
 conn = sqlite3.connect("player_data.db")
 cursor = conn.cursor()
+caesar_shift = 3
 
-def insert_player(data):
-    cursor.execute("INSERT INTO players VALUES (?, ?)", data)
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS players (
+    name TEXT,
+    score INTEGER DEFAULT 0,
+    time_played INTEGER NOT NULL DEFAULT 0 
+)
+""")
+
+
+def insert_player(name):
+    cursor.execute("INSERT INTO players VALUES (?, ?, ?)", (encode(name), 1213, 0))
     conn.commit()
 
 def update_score(name):
-    cursor.execute("UPDATE players set score = score + 1 where name = ?", (name,))
+    cursor.execute("UPDATE players set score = score + 1 where name = ?", (encode(name),))
     conn.commit()
 
 def get_score(name):
-    score = cursor.execute("SELECT score FROM players WHERE name = ?", (name,)).fetchone()
+    score = cursor.execute("SELECT score FROM players WHERE name = ?", (decode(name),)).fetchone()
     return score
 
 def get_existing_names():
@@ -20,9 +30,30 @@ def get_existing_names():
     names_tuples = cursor.execute("SELECT name FROM players").fetchall()
     for tup in names_tuples:
         for name in tup:
-            names_list.append(name)
+            names_list.append(decode(name))
     return names_list
 
+def encode(message, shift=caesar_shift):
+    encoded_message = ''
+    for i in range(len(message)):
+        letter = message[i]
+        letter_code = ord(letter)
+        shifted_code = letter_code + shift
+        if (shifted_code > 122 and letter.islower()) or (shifted_code > 90 and letter.isupper()):
+            shifted_code -= 26
+        encoded_message += chr(shifted_code)
+    return encoded_message
+
+def decode(message, shift=caesar_shift):
+    decoded_message = ''
+    for i in range(len(message)):
+        letter = message[i]
+        letter_code = ord(letter)
+        shifted_code = letter_code - shift
+        if (letter.islower() and shifted_code < 96) or (letter.isupper() and shifted_code < 65):
+            shifted_code += 26
+        decoded_message += chr(shifted_code)
+    return decoded_message    
 
 level_data = {
     1: {
@@ -30,7 +61,7 @@ level_data = {
         "enemy_hp": 15,
         "player_hp": 15,
         "enemy_strength": 5,
-        "player_strength": 5
+        "player_strength": 213
     },
     2: {
         "enemy_name": "SPICULUS",
