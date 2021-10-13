@@ -83,8 +83,6 @@ def start():
     time.sleep(1)
     print(">> in this game, there are 10 levels, each level there is a gladiator you have to fight. If you win - by reducing your opponent's HP to 0 - you advance to the next level. Each level your sword's strength and your HP increase and the same for your opponents.\n")
     name = get_name()
-    global current_player_name
-    current_player_name = name
     answer = input(f">> Gladiator {name}, are you ready? (y/n) ").lower()
     answer = validate(answer, ["y", "n"])
     if answer == "y":
@@ -101,7 +99,6 @@ def lvl_start(lvl):
     player_hp = level_data[lvl]["player_hp"]
     player_strength = level_data[lvl]["player_strength"]
     winner = None
-    start_time = time.time()
     
     print(">> FIGHT START <<")
     time.sleep(0.7)
@@ -146,7 +143,6 @@ def lvl_start(lvl):
         clear()
         lvl_start(lvl)
     else:
-        end_time = time.time()
         print("YOU DIED.")
         print(f">> GAME OVER - SCORE {lvl}<<")
 
