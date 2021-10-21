@@ -43,6 +43,8 @@ I chose python because:
 
 
 # Criteria B: Design
+## Theme
+I named my game "YUUSHA NO TSURUGI" (勇者の剣) which roughly translates to "Sword of the Hero" in English, I chose Japanese because I like it as a language and because Japan has made a lot of good fighting games. The game is set somewhere in the Roman Empire, where the player is a gladiator participating in a colosseum tournament against 10 enemies and each enemy is a level, I chose this theme because I found it suiting for a tournament fighting game.
 
 ## System Diagram
 ![](system_diagram.jpg)
