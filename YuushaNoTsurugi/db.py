@@ -42,6 +42,9 @@ def update_score(name):
     cursor.execute("UPDATE players set score = score + 1 where name = ?", (encode(name),))
     conn.commit()
 
+def update_time_played(name, time):
+    cursor.execute("UPDATE players set time_played = ? where name = ?", (time, encode(name)))
+
 def get_score(name):
     score = cursor.execute("SELECT score FROM players WHERE name = ?", (encode(name),)).fetchone()[0]
     return score

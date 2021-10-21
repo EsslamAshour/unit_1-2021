@@ -18,8 +18,11 @@ def start():
     answer = input(f">> Gladiator {name}, are you ready? (y/n) ").lower()
     answer = validate(answer, ["y", "n"])
     if answer == "y":
+        print("asdfasdf")
         db.insert_player(name)
         clear()
+        global start_time
+        start_time = time.time()
         lvl_start(1, name)
     else:
         print("Coward.")
@@ -67,16 +70,22 @@ def lvl_start(lvl, current_player_name):
     if winner == "player":
         print(">> YOU WON! <<")
         if lvl == 10:
+            end_time = time.time()
+            play_time = (end_time - start_time) / 60
+            db.update_time_played(current_player_name, play_time)
             print(">> CONGRATULATIONS. YOU ARE THE CHAMPION OF THE COLLOSSEUM! <<")
             db.update_score(current_player_name)
             sys.exit()
         db.update_score(current_player_name)
         print(f"Score: {db.get_score(current_player_name)}")
         print(f"NEXT LEVEL: {lvl+1} - STARTING IN 3 SECONDS")
-        time.sleep(3)
+        #time.sleep(3)
         clear()
         lvl_start(lvl+1, current_player_name)
     else:
+        end_time = time.time()
+        play_time = (end_time - start_time) / 60
+        db.update_time_played(current_player_name, play_time)
         print("YOU DIED.")
         print(f">> GAME OVER - SCORE {db.get_score(current_player_name)} <<")
 
