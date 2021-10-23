@@ -49,17 +49,17 @@ I named my game "YUUSHA NO TSURUGI" (勇者の剣) which roughly translates to "
 ## System Diagram
 ![](system_diagram.jpg)
 ## Flow Diagrams
-### encode()
+## encode()
 
-<img src="encode.png" width="30%">
+<img src="encode.png" width="40%">
 
-### get_name()
+## get_name()
 
-<img src="get_name.png" width="30%">
+<img src="get_name.png" width="40%">
 
 ## validate()
 
-<img src="validate.png" width="30%">
+<img src="validate.png" width="40%">
 
 ## Record of Tasks
 | Task No | Planned Action                    | Planned Outcome                                                         | Time estimate | Target completion date | Criterion |
