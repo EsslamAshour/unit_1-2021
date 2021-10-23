@@ -62,8 +62,8 @@ I named my game "YUUSHA NO TSURUGI" (勇者の剣) which roughly translates to "
 <img src="validate.png" width="40%">
 
 ## Record of Tasks
-| Task No | Planned Action                    | Planned Outcome                                                         | Time estimate | Target completion date | Criterion |
-|---------|-----------------------------------|-------------------------------------------------------------------------|---------------|------------------------|-----------|
-| 1       | Create system diagram             |                                                                         | 10 Minutes    | 24/9/2021              |           |
-| 2       | Code the database logic (sqlite3) | Have a functioning sqlite3 databse to insert, get and modify user data. | 30 Minutes    | 27/9/2021              |           |
-|         |                                   |                                                                         |               |                        |           |
+| Task No | Planned Action                                   | Planned Outcome                                                                                                                                                    | Time estimate | Target completion date | Criterion |
+|---------|--------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
+| 1       | Create system diagram                            | To have a clear idea of the hardware and software requirements for the proposed solution                                                                           | 10 Minutes    | 24/9/2021              | B         |
+| 2       | Code the database logic (sqlite3)                | Have a functioning sqlite3 databse to insert, get and modify user data.                                                                                            | 30 Minutes    | 27/9/2021              | C         |
+| 3       | Code the encode/decode functions (caesar cipher) | Have an encode function that receives a string and a number, shifts each letter by the number and a decode function that returns the string to its original state. | 30 Minutes    | 7/10/2021              | C         |
