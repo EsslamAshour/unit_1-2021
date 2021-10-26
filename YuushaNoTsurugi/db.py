@@ -1,3 +1,10 @@
+"""
+    File name: db.py
+    Author: Esslam Ashour
+    Date created: 26/9/2021
+    Python Version: 3.9.6 
+"""
+
 import sqlite3 
 
 conn = sqlite3.connect("player_data.db")
@@ -12,7 +19,10 @@ CREATE TABLE IF NOT EXISTS players (
 )
 """)
 
-def encode(message, shift=caesar_shift):
+def encode(message:str, shift=caesar_shift):
+    """
+    Function to implement the caesar cipher.
+    """
     encoded_message = ''
     for i in range(len(message)):
         letter = message[i]
@@ -23,7 +33,10 @@ def encode(message, shift=caesar_shift):
         encoded_message += chr(shifted_code)
     return encoded_message
 
-def decode(message, shift=caesar_shift):
+def decode(message: str, shift=caesar_shift):
+    """
+    Function to decrypt caesar cipher
+    """
     decoded_message = ''
     for i in range(len(message)):
         letter = message[i]
@@ -34,22 +47,37 @@ def decode(message, shift=caesar_shift):
         decoded_message += chr(shifted_code)
     return decoded_message    
 
-def insert_player(name):
+def insert_player(name: str):
+    """
+    Insert player name and initial score, time_played values (0, 0)
+    """
     cursor.execute("INSERT INTO players VALUES (?, ?, ?)", (encode(name), 0, 0))
     conn.commit()
 
-def update_score(name):
+def update_score(name: str):
+    """
+    Increase score by one given name
+    """
     cursor.execute("UPDATE players set score = score + 1 where name = ?", (encode(name),))
     conn.commit()
 
-def update_time_played(name, time):
+def update_time_played(name: int, time: float):
+    """
+    Update time_played given name
+    """
     cursor.execute("UPDATE players set time_played = ? where name = ?", (time, encode(name)))
 
-def get_score(name):
+def get_score(name: str):
+    """
+    Get the score of a player given name
+    """
     score = cursor.execute("SELECT score FROM players WHERE name = ?", (encode(name),)).fetchone()[0]
     return score
 
 def get_existing_names():
+    """
+    Get all names stored in the database
+    """
     names_list = []
     names_tuples = cursor.execute("SELECT name FROM players").fetchall()
     for tup in names_tuples:
@@ -57,7 +85,7 @@ def get_existing_names():
             names_list.append(decode(name))
     return names_list
 
-
+# Data for each level from 1 - 10
 level_data = {
     1: {
         "enemy_name": "FLAMMA",
