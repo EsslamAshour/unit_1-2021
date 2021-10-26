@@ -49,10 +49,22 @@ I named my game "YUUSHA NO TSURUGI" (勇者の剣) which roughly translates to "
 ## System Diagram
 ![](system_diagram.jpg)
 ## Flow Diagrams
+## encode()
+
+<img src="encode.png" width="40%">
+
+## get_name()
+
+<img src="get_name.png" width="40%">
+
+## validate()
+
+<img src="validate.png" width="40%">
 
 ## Record of Tasks
-| Task No | Planned Action                    | Planned Outcome                                                         | Time estimate | Target completion date | Criterion |
-|---------|-----------------------------------|-------------------------------------------------------------------------|---------------|------------------------|-----------|
-| 1       | Create system diagram             |                                                                         | 10 Minutes    | 24/9/2021              |           |
-| 2       | Code the database logic (sqlite3) | Have a functioning sqlite3 databse to insert, get and modify user data. | 30 Minutes    | 27/9/2021              |           |
-|         |                                   |                                                                         |               |                        |           |
+| Task No | Planned Action                                   | Planned Outcome                                                                                                                         | Time estimate | Target completion date | Criterion |
+|---------|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
+| 1       | Create system diagram                            | To have a clear idea of the hardware and software requirements for the proposed solution                                                | 10 Minutes    | 24/9/2021              | B         |
+| 2       | Code the database logic (sqlite3)                | Have a functioning sqlite3 databse to insert, get and modify user data.                                                                 | 30 Minutes    | 27/9/2021              | C         |
+| 3       | Code the encode/decode functions (Caesar cipher) | Have an encode function that applies the Caesar cipher to a string and a decode function that returns the string to its original state. | 50 Minutes    | 7/10/2021              | C         |
+| 4       | Code the played time calculation and storing     | Calculate time played until the user wins/loses and store it in the database.                                                           | 20 Minutes    | 18/10/2021             | C         |
