@@ -47,7 +47,7 @@ I chose python because:
 I named my game "YUUSHA NO TSURUGI" (勇者の剣) which roughly translates to "Sword of the Hero" in English, I chose Japanese because I like it as a language and because Japan has made a lot of good fighting games. The game is set somewhere in the Roman Empire, where the player is a gladiator participating in a colosseum tournament against 10 enemies and each enemy is a level, I chose this theme because I found it suiting for a tournament fighting game.
 
 ## System Diagram
-![](system_diagram.jpg)
+![](sys_dia.png)
 ## Flow Diagrams
 ## encode()
 
@@ -65,6 +65,9 @@ I named my game "YUUSHA NO TSURUGI" (勇者の剣) which roughly translates to "
 | Task No | Planned Action                                   | Planned Outcome                                                                                                                         | Time estimate | Target completion date | Criterion |
 |---------|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
 | 1       | Create system diagram                            | To have a clear idea of the hardware and software requirements for the proposed solution                                                | 10 Minutes    | 24/9/2021              | B         |
-| 2       | Code the database logic (sqlite3)                | Have a functioning sqlite3 databse to insert, get and modify user data.                                                                 | 30 Minutes    | 27/9/2021              | C         |
-| 3       | Code the encode/decode functions (Caesar cipher) | Have an encode function that applies the Caesar cipher to a string and a decode function that returns the string to its original state. | 50 Minutes    | 7/10/2021              | C         |
-| 4       | Code the played time calculation and storing     | Calculate time played until the user wins/loses and store it in the database.                                                           | 20 Minutes    | 18/10/2021             | C         |
+| 2       | Code game logic (lvl_start)                      | Create a function to run game levels recursively                                                                                        | 4 Days        | 27/9/2021              | C         |
+| 3       | Code the database logic (sqlite3)                | Have a functioning sqlite3 databse to insert, get and modify user data.                                                                 | 30 Minutes    | 27/9/2021              | C         |
+| 4       | Code the encode/decode functions (Caesar cipher) | Have an encode function that applies the Caesar cipher to a string and a decode function that returns the string to its original state. | 50 Minutes    | 7/10/2021              | C         |
+| 5       | Code the played time calculation and storing     | Calculate time played until the user wins/loses and store it in the database.                                                           | 20 Minutes    | 18/10/2021             | C         |
+| 6       | Make flowcharts                                  | Have 3 complete flowcharts of encode, get_name and validate                                                                             | 60 Minutes    | 23/10/2021             | B         |
+| 7       | Update the system diagram                        | Update the system diagram to match the final version of the game.                                                                       | 20 Minutes    | 27/10/2021             | B         |
