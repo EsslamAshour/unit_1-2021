@@ -69,7 +69,11 @@ I named my game "YUUSHA NO TSURUGI" (勇者の剣) which roughly translates to "
 | Unit Testing | ``validate`` (tests/validate_test.py) | ``"a", ["b", "c"]`` | ``Please input a valid option. (['b', 'c'])`` |
 
 ### Non-functional testing
-
+Feedback from MVP tester:
+- No bugs found
+- Game is easy to understand and play
+- Comments are few (Added more comments in final version)
+- Needs more features
 ## Record of Tasks
 | Task No | Planned Action                                   | Planned Outcome                                                                                                                         | Time estimate | Target completion date | Criterion |
 |---------|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
