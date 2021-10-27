@@ -61,6 +61,15 @@ I named my game "YUUSHA NO TSURUGI" (勇者の剣) which roughly translates to "
 
 <img src="validate.png" width="40%">
 
+## Testing
+### Functional Testing
+| Type of test | Test subject                          | Input               | Expected Output                               |
+|--------------|---------------------------------------|---------------------|-----------------------------------------------|
+| Unit Testing | ``encode`` (tests/encode_test.py)     | ``"abcz", 1``       | ``bcda``                                      |
+| Unit Testing | ``validate`` (tests/validate_test.py) | ``"a", ["b", "c"]`` | ``Please input a valid option. (['b', 'c'])`` |
+
+### Non-functional testing
+
 ## Record of Tasks
 | Task No | Planned Action                                   | Planned Outcome                                                                                                                         | Time estimate | Target completion date | Criterion |
 |---------|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
